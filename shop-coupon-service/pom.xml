@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>shop-parent</artifactId>
+        <groupId>com.lin</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>shop-coupon-service</artifactId>
+
+    <dependencies>
+        <!--        mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!--                Mybatis-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--            dubbo api-->
+        <dependency>
+            <groupId>com.lin</groupId>
+            <artifactId>shop-api</artifactId>
+        </dependency>
+
+        <!--            pojo-->
+        <dependency>
+            <groupId>com.lin</groupId>
+            <artifactId>shop-pojo</artifactId>
+        </dependency>
+
+        <!--           公共类 common-->
+        <dependency>
+            <groupId>com.lin</groupId>
+            <artifactId>shop-common</artifactId>
+        </dependency>
+
+
+
+
+    </dependencies>
+
+
+</project>
