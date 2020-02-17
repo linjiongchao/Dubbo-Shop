@@ -104,7 +104,7 @@ public class UserServiceImpl implements IUserService{
 ## RocketMQ配置
 ```
 # RocketMQ
-rocketmq.name-server=47.102.117.102:9876
+rocketmq.name-server=xxx.xxx.xxx.xxx:9876
 rocketmq.producer.group=rocketMQProducerGroup
 
 ```
