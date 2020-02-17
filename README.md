@@ -82,3 +82,53 @@ public class UserServiceImpl implements IUserService{
     private XXXService xxxService;
 }
 ```
+
+
+# RocketMQ
+
+## RocketMQ依赖
+
+```
+     <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    
+        <!-- rocketMQ -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>${rocketmq-spring-boot-starter-version}</version>
+        </dependency>
+```
+
+## RocketMQ配置
+```
+# RocketMQ
+rocketmq.name-server=47.102.117.102:9876
+rocketmq.producer.group=rocketMQProducerGroup
+
+```
+
+## RocketMQ发送消息
+
+```
+    @Autowired
+    private RocketMQTemplate rocketMQTemplate;
+    Message message = new Message(topic,tag,key,body.getBytes());
+    SendResult  result = rocketMQTemplate.getProducer().send(message);
+```
+
+## RocketMQ监听消息
+
+```
+@Slf4j
+@Component
+@RocketMQMessageListener(topic = "topic",
+        consumerGroup = "topic", messageModel = MessageModel.BROADCASTING)
+public class RocketMQListener implements RocketMQListener<MessageExt> {
+ @Override
+    public void onMessage(MessageExt messageExt) {
+    //处理消息
+    }
+}
+```
